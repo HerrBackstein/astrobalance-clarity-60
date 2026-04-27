@@ -111,11 +111,13 @@
     background-image:
       radial-gradient(
         circle at center,
-        oklch(0.46 0.18 300 / 0.42) 0%,
-        oklch(0.43 0.17 300 / 0.30) 30%,
-        oklch(0.39 0.15 300 / 0.16) 55%,
-        oklch(0.36 0.13 300 / 0.06) 78%,
-        oklch(0.35 0.13 300 / 0) 100%
+        oklch(0.46 0.18 300 / 0.40) 0%,
+        oklch(0.45 0.17 300 / 0.34) 18%,
+        oklch(0.43 0.16 300 / 0.24) 36%,
+        oklch(0.40 0.15 300 / 0.15) 54%,
+        oklch(0.38 0.13 300 / 0.08) 70%,
+        oklch(0.36 0.12 300 / 0.03) 85%,
+        oklch(0.35 0.10 300 / 0) 100%
       );
   }
   ::selection {
@@ -134,5 +136,30 @@
     background-color: oklch(1 0 0 / 0.04);
     backdrop-filter: blur(8px);
     border: 1px solid oklch(1 0 0 / 0.08);
+  }
+  .section-glow {
+    position: relative;
+    isolation: isolate;
+  }
+  .section-glow::before {
+    content: "";
+    position: absolute;
+    inset: -10% -5%;
+    z-index: -1;
+    pointer-events: none;
+    background-image:
+      radial-gradient(
+        ellipse 70% 60% at 30% 30%,
+        oklch(0.50 0.16 300 / 0.22) 0%,
+        oklch(0.46 0.15 300 / 0.14) 30%,
+        oklch(0.42 0.13 300 / 0.06) 60%,
+        oklch(0.40 0.12 300 / 0) 100%
+      ),
+      radial-gradient(
+        ellipse 65% 55% at 75% 75%,
+        oklch(0.44 0.14 295 / 0.18) 0%,
+        oklch(0.40 0.12 295 / 0.08) 45%,
+        oklch(0.38 0.10 295 / 0) 100%
+      );
   }
 }
