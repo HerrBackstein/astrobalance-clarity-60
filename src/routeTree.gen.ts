@@ -9,8 +9,38 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as UeberMichRouteImport } from './routes/ueber-mich'
+import { Route as TierkommunikationRouteImport } from './routes/tierkommunikation'
+import { Route as SelbstfindungRouteImport } from './routes/selbstfindung'
+import { Route as HaltungRouteImport } from './routes/haltung'
+import { Route as AngeboteRouteImport } from './routes/angebote'
 import { Route as IndexRouteImport } from './routes/index'
 
+const UeberMichRoute = UeberMichRouteImport.update({
+  id: '/ueber-mich',
+  path: '/ueber-mich',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TierkommunikationRoute = TierkommunikationRouteImport.update({
+  id: '/tierkommunikation',
+  path: '/tierkommunikation',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SelbstfindungRoute = SelbstfindungRouteImport.update({
+  id: '/selbstfindung',
+  path: '/selbstfindung',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const HaltungRoute = HaltungRouteImport.update({
+  id: '/haltung',
+  path: '/haltung',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AngeboteRoute = AngeboteRouteImport.update({
+  id: '/angebote',
+  path: '/angebote',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +49,102 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/angebote': typeof AngeboteRoute
+  '/haltung': typeof HaltungRoute
+  '/selbstfindung': typeof SelbstfindungRoute
+  '/tierkommunikation': typeof TierkommunikationRoute
+  '/ueber-mich': typeof UeberMichRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/angebote': typeof AngeboteRoute
+  '/haltung': typeof HaltungRoute
+  '/selbstfindung': typeof SelbstfindungRoute
+  '/tierkommunikation': typeof TierkommunikationRoute
+  '/ueber-mich': typeof UeberMichRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/angebote': typeof AngeboteRoute
+  '/haltung': typeof HaltungRoute
+  '/selbstfindung': typeof SelbstfindungRoute
+  '/tierkommunikation': typeof TierkommunikationRoute
+  '/ueber-mich': typeof UeberMichRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/angebote'
+    | '/haltung'
+    | '/selbstfindung'
+    | '/tierkommunikation'
+    | '/ueber-mich'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/angebote'
+    | '/haltung'
+    | '/selbstfindung'
+    | '/tierkommunikation'
+    | '/ueber-mich'
+  id:
+    | '__root__'
+    | '/'
+    | '/angebote'
+    | '/haltung'
+    | '/selbstfindung'
+    | '/tierkommunikation'
+    | '/ueber-mich'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AngeboteRoute: typeof AngeboteRoute
+  HaltungRoute: typeof HaltungRoute
+  SelbstfindungRoute: typeof SelbstfindungRoute
+  TierkommunikationRoute: typeof TierkommunikationRoute
+  UeberMichRoute: typeof UeberMichRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/ueber-mich': {
+      id: '/ueber-mich'
+      path: '/ueber-mich'
+      fullPath: '/ueber-mich'
+      preLoaderRoute: typeof UeberMichRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tierkommunikation': {
+      id: '/tierkommunikation'
+      path: '/tierkommunikation'
+      fullPath: '/tierkommunikation'
+      preLoaderRoute: typeof TierkommunikationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/selbstfindung': {
+      id: '/selbstfindung'
+      path: '/selbstfindung'
+      fullPath: '/selbstfindung'
+      preLoaderRoute: typeof SelbstfindungRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/haltung': {
+      id: '/haltung'
+      path: '/haltung'
+      fullPath: '/haltung'
+      preLoaderRoute: typeof HaltungRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/angebote': {
+      id: '/angebote'
+      path: '/angebote'
+      fullPath: '/angebote'
+      preLoaderRoute: typeof AngeboteRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +157,11 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AngeboteRoute: AngeboteRoute,
+  HaltungRoute: HaltungRoute,
+  SelbstfindungRoute: SelbstfindungRoute,
+  TierkommunikationRoute: TierkommunikationRoute,
+  UeberMichRoute: UeberMichRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
