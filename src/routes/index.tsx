@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import heroMeadow from "@/assets/hero-meadow.jpg";
-import celestial from "@/assets/celestial.jpg";
+import moonLogo from "@/assets/moon-logo.png";
 import { SectionEyebrow } from "@/components/section-eyebrow";
 
 export const Route = createFileRoute("/")({
@@ -27,15 +27,15 @@ function HomePage() {
     <>
       {/* HERO */}
       <section className="relative overflow-hidden">
-        <div className="pointer-events-none absolute -right-40 -top-40 size-[700px] rounded-full bg-sand/60 blur-[140px]" />
-        <div className="pointer-events-none absolute -left-40 top-1/2 size-[500px] rounded-full bg-clay/10 blur-[120px]" />
+        <div className="pointer-events-none absolute -right-40 -top-40 size-[700px] rounded-full bg-clay/10 blur-[160px]" />
+        <div className="pointer-events-none absolute -left-40 top-1/2 size-[500px] rounded-full bg-clay/5 blur-[140px]" />
 
-        <div className="relative mx-auto grid max-w-7xl gap-16 px-6 py-20 lg:grid-cols-12 lg:gap-20 lg:px-12 lg:py-32">
-          <div className="flex flex-col justify-center gap-8 lg:col-span-5">
+        <div className="relative mx-auto grid max-w-7xl gap-16 px-6 py-20 lg:grid-cols-12 lg:gap-20 lg:px-12 lg:py-28">
+          <div className="flex flex-col justify-center gap-8 lg:col-span-6">
             <SectionEyebrow>Raum für Reflexion</SectionEyebrow>
-            <h1 className="text-balance font-serif text-5xl leading-[1.05] text-earth md:text-6xl lg:text-7xl">
+            <h1 className="text-balance font-serif text-5xl leading-[1.05] text-mist md:text-6xl lg:text-7xl">
               Innere Balance{" "}
-              <span className="italic text-dusk">finden</span>
+              <span className="italic text-clay">finden</span>
             </h1>
             <p className="max-w-[44ch] text-pretty text-lg font-light leading-relaxed text-dusk">
               Durch Selbsterkenntnis, Übernahme von Verantwortung und bewusst den lichten Weg
@@ -45,34 +45,31 @@ function HomePage() {
             <div className="flex flex-wrap items-center gap-5 pt-2">
               <Link
                 to="/angebote"
-                className="rounded-full bg-earth px-8 py-4 text-sm font-light text-mist transition-all duration-300 hover:bg-earth/90 hover:shadow-lg hover:shadow-earth/15"
+                className="rounded-full bg-clay px-8 py-4 text-sm font-light text-earth transition-all duration-300 hover:bg-mist hover:shadow-lg hover:shadow-clay/20"
               >
                 Angebote ansehen
               </Link>
               <Link
                 to="/ueber-mich"
-                className="text-sm font-light text-earth underline-offset-4 hover:text-clay hover:underline"
+                className="text-sm font-light text-mist underline-offset-4 hover:text-clay hover:underline"
               >
                 Mehr über meine Arbeit ↓
               </Link>
             </div>
           </div>
 
-          <div className="relative lg:col-span-7">
-            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-[36px] bg-sand/40 p-2.5">
-              <div className="size-full overflow-hidden rounded-[26px] bg-sand">
-                <img
-                  src={heroMeadow}
-                  alt="Sonnenaufgang über stiller Wiese"
-                  width={1280}
-                  height={960}
-                  className="size-full object-cover opacity-95 mix-blend-multiply"
-                />
-              </div>
-              <div className="absolute -bottom-5 -left-5 hidden rounded-2xl border border-border bg-mist px-5 py-4 shadow-sm md:block">
-                <p className="font-serif italic text-earth">„Klarheit schafft Raum.“</p>
-                <p className="mt-1 text-xs text-dusk">— Victoria Storer</p>
-              </div>
+          <div className="relative flex items-center justify-center lg:col-span-6">
+            {/* Mond als zentrales Brand-Element */}
+            <div className="relative aspect-square w-full max-w-[520px]">
+              <div className="absolute inset-0 rounded-full bg-clay/10 blur-3xl" />
+              <img
+                src={moonLogo}
+                alt="AstroBalance Mond-Emblem"
+                width={1024}
+                height={1024}
+                className="relative size-full object-contain"
+                style={{ filter: "drop-shadow(0 20px 60px rgba(0,0,0,0.4))" }}
+              />
             </div>
           </div>
         </div>
@@ -83,8 +80,8 @@ function HomePage() {
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <SectionEyebrow>Wenn innere Klarheit gebraucht wird</SectionEyebrow>
-            <h2 className="mt-6 font-serif text-4xl leading-tight text-earth md:text-5xl">
-              Es gibt Lebensphasen, in denen alte Antworten <em className="text-dusk">nicht mehr tragen.</em>
+            <h2 className="mt-6 font-serif text-4xl leading-tight text-mist md:text-5xl">
+              Es gibt Lebensphasen, in denen alte Antworten <em className="text-clay">nicht mehr tragen.</em>
             </h2>
           </div>
           <div className="space-y-6 text-lg font-light leading-relaxed text-dusk lg:col-span-6 lg:col-start-7">
@@ -103,7 +100,7 @@ function HomePage() {
       </section>
 
       {/* PILLARS */}
-      <section className="border-y border-border/60 bg-sand/30">
+      <section className="border-y border-white/10 bg-black/15">
         <div className="mx-auto grid max-w-7xl gap-12 px-6 py-24 md:grid-cols-3 lg:px-12">
           {[
             {
@@ -126,7 +123,7 @@ function HomePage() {
               <span className="font-serif text-sm uppercase tracking-[0.25em] text-clay">
                 {p.n}
               </span>
-              <h3 className="font-serif text-2xl text-earth">{p.title}</h3>
+              <h3 className="font-serif text-2xl text-mist">{p.title}</h3>
               <p className="max-w-[34ch] text-sm font-light leading-relaxed text-dusk">{p.body}</p>
             </div>
           ))}
@@ -136,22 +133,22 @@ function HomePage() {
       {/* ASTROLOGY AS MIRROR */}
       <section className="mx-auto max-w-7xl px-6 py-28 lg:px-12">
         <div className="grid items-center gap-16 lg:grid-cols-2">
-          <div className="relative aspect-[4/5] overflow-hidden rounded-[36px] bg-sand/40 p-2.5">
+          <div className="relative aspect-[4/5] overflow-hidden rounded-[36px] panel p-2.5">
             <div className="size-full overflow-hidden rounded-[26px]">
               <img
-                src={celestial}
-                alt="Astrologisches Symbol"
-                width={1024}
-                height={1280}
+                src={heroMeadow}
+                alt="Stille Wiese im Morgenlicht"
+                width={1280}
+                height={960}
                 loading="lazy"
-                className="size-full object-cover"
+                className="size-full object-cover opacity-80 mix-blend-luminosity"
               />
             </div>
           </div>
           <div className="flex flex-col gap-7">
             <SectionEyebrow>Astrologie als Spiegel — nicht als Vorhersage</SectionEyebrow>
-            <h2 className="font-serif text-4xl leading-tight text-earth md:text-5xl">
-              Selbstreflexion und <span className="italic text-dusk">Orientierung.</span>
+            <h2 className="font-serif text-4xl leading-tight text-mist md:text-5xl">
+              Selbstreflexion und <span className="italic text-clay">Orientierung.</span>
             </h2>
             <div className="space-y-5 text-base font-light leading-relaxed text-dusk">
               <p>
@@ -169,18 +166,18 @@ function HomePage() {
       </section>
 
       {/* IMPERASTRO */}
-      <section className="bg-earth text-mist">
+      <section className="border-y border-white/10 bg-black/20">
         <div className="mx-auto max-w-7xl px-6 py-24 lg:px-12">
           <div className="grid gap-12 lg:grid-cols-12">
             <div className="lg:col-span-4">
-              <p className="text-[0.7rem] uppercase tracking-[0.25em] text-mist/60">
+              <p className="text-[0.7rem] uppercase tracking-[0.25em] text-clay">
                 Präzision in der Analyse
               </p>
-              <h2 className="mt-6 font-serif text-4xl leading-tight md:text-5xl">
-                Imperastro <span className="italic text-mist/70">— Tiefe & Klarheit.</span>
+              <h2 className="mt-6 font-serif text-4xl leading-tight text-mist md:text-5xl">
+                Imperastro <span className="italic text-clay">— Tiefe & Klarheit.</span>
               </h2>
             </div>
-            <div className="space-y-5 text-base font-light leading-relaxed text-mist/80 lg:col-span-7 lg:col-start-6">
+            <div className="space-y-5 text-base font-light leading-relaxed text-dusk lg:col-span-7 lg:col-start-6">
               <p>
                 Für die astrologische Ausarbeitung verwende ich das professionelle Astroprogramm
                 Imperastro — entwickelt von Frank & Rainer, dort, wo langjährige Erfahrung auf
@@ -191,7 +188,7 @@ function HomePage() {
                 unterstützt eine astrologische Analyse auf höchstem fachlichen Niveau. Die
                 Interpretation bleibt dabei stets individuell und verantwortungsvoll.
               </p>
-              <p className="border-l border-clay/60 pl-5 italic text-mist/90">
+              <p className="border-l-2 border-clay/60 pl-5 italic text-mist/85">
                 Technische Präzision und intuitive Wahrnehmung stehen in Balance. Die astrologische
                 Analyse dient als Grundlage — die bewusste Integration geschieht im Gespräch.
               </p>
@@ -202,13 +199,13 @@ function HomePage() {
 
       {/* CTA */}
       <section className="mx-auto max-w-4xl px-6 py-28 text-center lg:px-12">
-        <p className="font-serif text-3xl italic leading-relaxed text-earth md:text-4xl">
+        <p className="font-serif text-3xl italic leading-relaxed text-mist md:text-4xl">
           „Tiefe Erkenntnis entsteht, wenn Klarheit standhält und Bewusstheit den lichten Weg
           wählt.“
         </p>
         <Link
           to="/kontakt"
-          className="mt-12 inline-flex rounded-full bg-earth px-9 py-4 text-sm font-light text-mist transition hover:bg-earth/90"
+          className="mt-12 inline-flex rounded-full bg-clay px-9 py-4 text-sm font-light text-earth transition hover:bg-mist"
         >
           Termin anfragen
         </Link>
