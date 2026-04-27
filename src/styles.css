@@ -106,13 +106,13 @@
     letter-spacing: -0.01em;
     color: var(--heading);
     display: inline-block;
-    padding: 0.1em 0.4em;
+    padding: 0.35em 0.9em;
     border-radius: 0.3em;
     background-image: radial-gradient(
       ellipse at center,
-      color-mix(in oklab, oklch(0.55 0.22 300) 55%, transparent) 0%,
-      color-mix(in oklab, oklch(0.50 0.20 300) 28%, transparent) 45%,
-      transparent 80%
+      color-mix(in oklab, oklch(0.40 0.18 300) 75%, transparent) 0%,
+      color-mix(in oklab, oklch(0.35 0.16 300) 45%, transparent) 55%,
+      transparent 90%
     );
   }
   ::selection {
