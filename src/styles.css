@@ -108,7 +108,12 @@
     display: inline-block;
     padding: 0.1em 0.4em;
     border-radius: 0.3em;
-    background-color: color-mix(in oklab, var(--heading) 12%, transparent);
+    background-image: radial-gradient(
+      ellipse at center,
+      color-mix(in oklab, var(--heading) 28%, transparent) 0%,
+      color-mix(in oklab, var(--heading) 14%, transparent) 40%,
+      transparent 80%
+    );
   }
   ::selection {
     background-color: color-mix(in oklab, var(--clay) 35%, transparent);
