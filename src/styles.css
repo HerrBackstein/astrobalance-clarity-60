@@ -32,11 +32,12 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
 
-  --color-mist: var(--mist);
-  --color-sand: var(--sand);
-  --color-clay: var(--clay);
-  --color-earth: var(--earth);
-  --color-dusk: var(--dusk);
+  /* Visitenkarten-Palette */
+  --color-mist: var(--mist);     /* cremeweiß (text) */
+  --color-sand: var(--sand);     /* gedämpftes lavendel */
+  --color-clay: var(--clay);     /* warmes gold/cream highlight */
+  --color-earth: var(--earth);   /* tiefes lila (hintergrund) */
+  --color-dusk: var(--dusk);     /* gedämpfter lavendel-text */
 
   --font-serif: 'Fraunces', Georgia, serif;
   --font-sans: 'Outfit', system-ui, sans-serif;
@@ -45,39 +46,37 @@
 :root {
   --radius: 0.625rem;
 
-  /* Brand palette — warm earthy sanctuary */
-  --mist: oklch(0.972 0.008 80);
-  --sand: oklch(0.92 0.018 75);
-  --clay: oklch(0.66 0.085 45);
-  --earth: oklch(0.32 0.022 55);
-  --dusk: oklch(0.55 0.018 60);
+  /* Brand palette — Visitenkarte: tiefes Lila & Cremeweiß */
+  --mist: oklch(0.96 0.018 85);          /* warmes cremeweiß */
+  --sand: oklch(0.42 0.105 305);         /* mittleres lila */
+  --clay: oklch(0.86 0.06 85);           /* sanftes gold-cream */
+  --earth: oklch(0.30 0.13 300);         /* tiefes mystisches lila */
+  --dusk: oklch(0.78 0.04 305);          /* gedämpfter lavendel */
 
-  --background: var(--mist);
-  --foreground: var(--earth);
-  --card: oklch(0.985 0.005 80);
-  --card-foreground: var(--earth);
-  --popover: var(--mist);
-  --popover-foreground: var(--earth);
-  --primary: var(--earth);
-  --primary-foreground: var(--mist);
-  --secondary: var(--sand);
-  --secondary-foreground: var(--earth);
-  --muted: oklch(0.95 0.012 78);
+  --background: var(--earth);
+  --foreground: var(--mist);
+  --card: oklch(0.36 0.13 300);
+  --card-foreground: var(--mist);
+  --popover: oklch(0.36 0.13 300);
+  --popover-foreground: var(--mist);
+  --primary: var(--mist);
+  --primary-foreground: var(--earth);
+  --secondary: oklch(0.38 0.12 302);
+  --secondary-foreground: var(--mist);
+  --muted: oklch(0.36 0.11 302);
   --muted-foreground: var(--dusk);
   --accent: var(--clay);
-  --accent-foreground: var(--mist);
-  --destructive: oklch(0.55 0.18 28);
+  --accent-foreground: var(--earth);
+  --destructive: oklch(0.65 0.2 25);
   --destructive-foreground: var(--mist);
-  --border: oklch(0.88 0.018 75);
-  --input: oklch(0.9 0.015 75);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 15%);
   --ring: var(--clay);
 }
 
 .dark {
-  --background: oklch(0.2 0.012 60);
+  --background: oklch(0.22 0.12 300);
   --foreground: var(--mist);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
 }
 
 @layer base {
@@ -93,6 +92,12 @@
     font-family: var(--font-sans);
     font-weight: 300;
     -webkit-font-smoothing: antialiased;
+    /* sanfter Wollstoff-Effekt wie auf der Visitenkarte */
+    background-image:
+      radial-gradient(at 20% 10%, oklch(0.38 0.14 300) 0%, transparent 55%),
+      radial-gradient(at 85% 80%, oklch(0.26 0.12 295) 0%, transparent 60%),
+      radial-gradient(at 50% 50%, oklch(0.32 0.13 302) 0%, transparent 70%);
+    background-attachment: fixed;
   }
   h1, h2, h3, h4 {
     font-family: var(--font-serif);
@@ -100,7 +105,20 @@
     letter-spacing: -0.01em;
   }
   ::selection {
-    background-color: color-mix(in oklab, var(--clay) 25%, transparent);
-    color: var(--earth);
+    background-color: color-mix(in oklab, var(--clay) 35%, transparent);
+    color: var(--mist);
+  }
+}
+
+@layer utilities {
+  .bg-noise {
+    background-image:
+      radial-gradient(circle at 30% 20%, oklch(1 0 0 / 0.02) 0%, transparent 40%),
+      radial-gradient(circle at 70% 70%, oklch(1 0 0 / 0.015) 0%, transparent 40%);
+  }
+  .panel {
+    background-color: oklch(1 0 0 / 0.04);
+    backdrop-filter: blur(8px);
+    border: 1px solid oklch(1 0 0 / 0.08);
   }
 }
