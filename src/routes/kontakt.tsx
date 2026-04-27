@@ -23,7 +23,7 @@ function Page() {
       <div className="grid gap-16 lg:grid-cols-12">
         <div className="lg:col-span-5">
           <SectionEyebrow>Kontakt</SectionEyebrow>
-          <h1 className="mt-6 font-serif text-5xl leading-[1.05] text-earth md:text-6xl">
+          <h1 className="mt-6 font-serif text-5xl leading-[1.05] text-mist md:text-6xl">
             Schreib mir <span className="italic text-dusk">in Ruhe.</span>
           </h1>
           <p className="mt-8 max-w-md text-base font-light leading-relaxed text-dusk">
@@ -31,7 +31,7 @@ function Page() {
             Tierkommunikation oder astrologischer Begleitung.
           </p>
 
-          <div className="mt-12 space-y-5 text-base font-light text-earth">
+          <div className="mt-12 space-y-5 text-base font-light text-mist">
             <a href="mailto:astrobalance@gmail.com" className="flex items-start gap-4 hover:text-clay">
               <Mail className="mt-0.5 size-5 text-clay" />
               <span>astrobalance@gmail.com</span>
@@ -51,7 +51,7 @@ function Page() {
         </div>
 
         <form
-          className="space-y-6 rounded-3xl border border-border bg-card p-8 lg:col-span-6 lg:col-start-7 lg:p-10"
+          className="space-y-6 rounded-3xl border border-white/10 bg-white/5 p-8 lg:col-span-6 lg:col-start-7 lg:p-10"
           onSubmit={(e) => {
             e.preventDefault();
             const data = new FormData(e.currentTarget);
@@ -66,7 +66,7 @@ function Page() {
             <label htmlFor="name" className="text-xs uppercase tracking-[0.2em] text-dusk">Name</label>
             <input
               id="name" name="name" required
-              className="border-b border-border bg-transparent py-3 text-base text-earth placeholder:text-dusk/60 focus:border-clay focus:outline-none"
+              className="border-b border-white/10 bg-transparent py-3 text-base text-mist placeholder:text-dusk/60 focus:border-clay focus:outline-none"
               placeholder="Dein Name"
             />
           </div>
@@ -74,7 +74,7 @@ function Page() {
             <label htmlFor="email" className="text-xs uppercase tracking-[0.2em] text-dusk">E-Mail</label>
             <input
               id="email" name="email" type="email" required
-              className="border-b border-border bg-transparent py-3 text-base text-earth placeholder:text-dusk/60 focus:border-clay focus:outline-none"
+              className="border-b border-white/10 bg-transparent py-3 text-base text-mist placeholder:text-dusk/60 focus:border-clay focus:outline-none"
               placeholder="dein@beispiel.at"
             />
           </div>
@@ -82,11 +82,11 @@ function Page() {
             <label htmlFor="message" className="text-xs uppercase tracking-[0.2em] text-dusk">Nachricht</label>
             <textarea
               id="message" name="message" rows={5} required
-              className="border-b border-border bg-transparent py-3 text-base text-earth placeholder:text-dusk/60 focus:border-clay focus:outline-none"
+              className="border-b border-white/10 bg-transparent py-3 text-base text-mist placeholder:text-dusk/60 focus:border-clay focus:outline-none"
               placeholder="Worum geht es?"
             />
           </div>
-          <button type="submit" className="w-full rounded-full bg-earth px-8 py-4 text-sm font-light text-mist transition hover:bg-earth/90">
+          <button type="submit" className="w-full rounded-full bg-black/20 px-8 py-4 text-sm font-light text-mist transition hover:bg-white/5">
             Anfrage senden
           </button>
           <p className="text-xs text-dusk">

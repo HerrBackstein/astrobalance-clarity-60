@@ -8,11 +8,11 @@ function NotFoundComponent() {
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <p className="text-xs uppercase tracking-[0.25em] text-dusk">404</p>
-        <h1 className="mt-6 font-serif text-5xl text-earth">Seite nicht gefunden</h1>
+        <h1 className="mt-6 font-serif text-5xl text-mist">Seite nicht gefunden</h1>
         <p className="mt-4 text-sm text-dusk">Diese Seite existiert nicht oder wurde verschoben.</p>
         <Link
           to="/"
-          className="mt-8 inline-flex rounded-full bg-earth px-7 py-3 text-sm text-mist transition hover:bg-earth/90"
+          className="mt-8 inline-flex rounded-full bg-black/20 px-7 py-3 text-sm text-mist transition hover:bg-white/5"
         >
           Zur Startseite
         </Link>
