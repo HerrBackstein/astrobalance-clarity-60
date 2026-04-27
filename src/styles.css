@@ -124,6 +124,33 @@
     background-color: color-mix(in oklab, var(--clay) 35%, transparent);
     color: var(--mist);
   }
+  section {
+    position: relative;
+    isolation: isolate;
+  }
+  section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image:
+      radial-gradient(
+        ellipse 75% 65% at 25% 25%,
+        oklch(0.50 0.16 300 / 0.18) 0%,
+        oklch(0.47 0.15 300 / 0.12) 25%,
+        oklch(0.44 0.13 300 / 0.06) 55%,
+        oklch(0.40 0.11 300 / 0.02) 80%,
+        oklch(0.38 0.10 300 / 0) 100%
+      ),
+      radial-gradient(
+        ellipse 70% 60% at 80% 80%,
+        oklch(0.44 0.14 295 / 0.16) 0%,
+        oklch(0.41 0.12 295 / 0.08) 40%,
+        oklch(0.38 0.10 295 / 0.02) 75%,
+        oklch(0.36 0.09 295 / 0) 100%
+      );
+  }
 }
 
 @layer utilities {
