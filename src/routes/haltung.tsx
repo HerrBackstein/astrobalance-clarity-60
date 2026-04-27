@@ -39,10 +39,10 @@ const principles = [
 function Page() {
   return (
     <>
-      <section className="border-b border-border/60">
+      <section className="border-b border-white/10/60">
         <div className="mx-auto max-w-7xl px-6 py-24 lg:px-12 lg:py-32">
           <SectionEyebrow>Haltung & Ethik</SectionEyebrow>
-          <h1 className="mt-6 max-w-4xl font-serif text-5xl leading-[1.05] text-earth md:text-6xl lg:text-7xl">
+          <h1 className="mt-6 max-w-4xl font-serif text-5xl leading-[1.05] text-mist md:text-6xl lg:text-7xl">
             Begleitung mit <span className="italic text-dusk">Klarheit & Verantwortung.</span>
           </h1>
           <div className="mt-10 max-w-3xl space-y-4 text-lg font-light leading-relaxed text-dusk">
@@ -57,20 +57,20 @@ function Page() {
       <section className="mx-auto max-w-7xl px-6 py-24 lg:px-12">
         <div className="grid gap-x-16 gap-y-16 md:grid-cols-2">
           {principles.map((p, i) => (
-            <article key={p.title} className="flex flex-col gap-5 border-t border-border pt-8">
+            <article key={p.title} className="flex flex-col gap-5 border-t border-white/10 pt-8">
               <span className="font-serif text-sm uppercase tracking-[0.25em] text-clay">
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <h2 className="font-serif text-3xl text-earth">{p.title}</h2>
+              <h2 className="font-serif text-3xl text-mist">{p.title}</h2>
               <p className="text-base font-light leading-relaxed text-dusk">{p.body}</p>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="border-t border-border/60 bg-sand/30">
+      <section className="border-t border-white/10/60 bg-black/15">
         <div className="mx-auto max-w-3xl px-6 py-24 text-center lg:px-12">
-          <p className="font-serif text-2xl italic leading-relaxed text-earth md:text-3xl">
+          <p className="font-serif text-2xl italic leading-relaxed text-mist md:text-3xl">
             „Tiefe Erkenntnis entsteht, wenn Klarheit standhält und Bewusstheit den lichten Weg
             wählt.“
           </p>

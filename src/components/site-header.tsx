@@ -1,6 +1,7 @@
 import { Link, useLocation } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import moonLogo from "@/assets/moon-logo.png";
 
 const nav = [
   { to: "/selbstfindung", label: "Selbstfindung" },
@@ -15,12 +16,22 @@ export function SiteHeader() {
   const location = useLocation();
 
   return (
-    <header className="sticky top-0 z-40 border-b border-border/60 bg-mist/80 backdrop-blur-xl">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-12 lg:py-7">
-        <Link to="/" className="flex flex-col leading-none" onClick={() => setOpen(false)}>
-          <span className="font-serif text-2xl tracking-tight text-earth">AstroBalance</span>
-          <span className="mt-1 text-[0.6rem] uppercase tracking-[0.25em] text-dusk">
-            by Victoria Storer
+    <header className="sticky top-0 z-40 border-b border-white/10 bg-earth/70 backdrop-blur-xl">
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-5 lg:px-12 lg:py-6">
+        <Link to="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
+          <img
+            src={moonLogo}
+            alt=""
+            width={48}
+            height={48}
+            className="size-10 lg:size-12"
+            style={{ filter: "drop-shadow(0 2px 6px rgba(0,0,0,0.25))" }}
+          />
+          <span className="flex flex-col leading-none">
+            <span className="font-serif text-2xl tracking-tight text-mist">AstroBalance</span>
+            <span className="mt-1 text-[0.6rem] uppercase tracking-[0.25em] text-clay">
+              by Victoria
+            </span>
           </span>
         </Link>
 
@@ -32,7 +43,7 @@ export function SiteHeader() {
                 key={item.to}
                 to={item.to}
                 className={`text-sm font-light transition-colors hover:text-clay ${
-                  active ? "text-clay" : "text-earth"
+                  active ? "text-clay" : "text-mist/85"
                 }`}
               >
                 {item.label}
@@ -43,7 +54,7 @@ export function SiteHeader() {
 
         <Link
           to="/kontakt"
-          className="hidden rounded-full border border-earth/30 px-5 py-2 text-sm font-light text-earth transition hover:bg-earth hover:text-mist lg:inline-flex"
+          className="hidden rounded-full border border-clay/50 px-5 py-2 text-sm font-light text-clay transition hover:bg-clay hover:text-earth lg:inline-flex"
         >
           Kontakt
         </Link>
@@ -52,21 +63,21 @@ export function SiteHeader() {
           type="button"
           aria-label="Menü"
           onClick={() => setOpen((o) => !o)}
-          className="text-earth lg:hidden"
+          className="text-mist lg:hidden"
         >
           {open ? <X className="size-5" /> : <Menu className="size-5" />}
         </button>
       </div>
 
       {open && (
-        <div className="border-t border-border/60 bg-mist lg:hidden">
+        <div className="border-t border-white/10 bg-earth lg:hidden">
           <nav className="mx-auto flex max-w-7xl flex-col gap-1 px-6 py-4">
             {nav.map((item) => (
               <Link
                 key={item.to}
                 to={item.to}
                 onClick={() => setOpen(false)}
-                className="rounded-md px-2 py-3 text-sm text-earth hover:bg-sand/60"
+                className="rounded-md px-2 py-3 text-sm text-mist hover:bg-white/5"
               >
                 {item.label}
               </Link>
@@ -74,7 +85,7 @@ export function SiteHeader() {
             <Link
               to="/kontakt"
               onClick={() => setOpen(false)}
-              className="mt-2 rounded-md bg-earth px-2 py-3 text-center text-sm text-mist"
+              className="mt-2 rounded-md bg-clay px-2 py-3 text-center text-sm text-earth"
             >
               Kontakt
             </Link>
