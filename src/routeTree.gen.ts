@@ -12,6 +12,8 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as UeberMichRouteImport } from './routes/ueber-mich'
 import { Route as TierkommunikationRouteImport } from './routes/tierkommunikation'
 import { Route as SelbstfindungRouteImport } from './routes/selbstfindung'
+import { Route as RechtlichesRouteImport } from './routes/rechtliches'
+import { Route as KontaktRouteImport } from './routes/kontakt'
 import { Route as HaltungRouteImport } from './routes/haltung'
 import { Route as AngeboteRouteImport } from './routes/angebote'
 import { Route as IndexRouteImport } from './routes/index'
@@ -29,6 +31,16 @@ const TierkommunikationRoute = TierkommunikationRouteImport.update({
 const SelbstfindungRoute = SelbstfindungRouteImport.update({
   id: '/selbstfindung',
   path: '/selbstfindung',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RechtlichesRoute = RechtlichesRouteImport.update({
+  id: '/rechtliches',
+  path: '/rechtliches',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KontaktRoute = KontaktRouteImport.update({
+  id: '/kontakt',
+  path: '/kontakt',
   getParentRoute: () => rootRouteImport,
 } as any)
 const HaltungRoute = HaltungRouteImport.update({
@@ -51,6 +63,8 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/angebote': typeof AngeboteRoute
   '/haltung': typeof HaltungRoute
+  '/kontakt': typeof KontaktRoute
+  '/rechtliches': typeof RechtlichesRoute
   '/selbstfindung': typeof SelbstfindungRoute
   '/tierkommunikation': typeof TierkommunikationRoute
   '/ueber-mich': typeof UeberMichRoute
@@ -59,6 +73,8 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/angebote': typeof AngeboteRoute
   '/haltung': typeof HaltungRoute
+  '/kontakt': typeof KontaktRoute
+  '/rechtliches': typeof RechtlichesRoute
   '/selbstfindung': typeof SelbstfindungRoute
   '/tierkommunikation': typeof TierkommunikationRoute
   '/ueber-mich': typeof UeberMichRoute
@@ -68,6 +84,8 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/angebote': typeof AngeboteRoute
   '/haltung': typeof HaltungRoute
+  '/kontakt': typeof KontaktRoute
+  '/rechtliches': typeof RechtlichesRoute
   '/selbstfindung': typeof SelbstfindungRoute
   '/tierkommunikation': typeof TierkommunikationRoute
   '/ueber-mich': typeof UeberMichRoute
@@ -78,6 +96,8 @@ export interface FileRouteTypes {
     | '/'
     | '/angebote'
     | '/haltung'
+    | '/kontakt'
+    | '/rechtliches'
     | '/selbstfindung'
     | '/tierkommunikation'
     | '/ueber-mich'
@@ -86,6 +106,8 @@ export interface FileRouteTypes {
     | '/'
     | '/angebote'
     | '/haltung'
+    | '/kontakt'
+    | '/rechtliches'
     | '/selbstfindung'
     | '/tierkommunikation'
     | '/ueber-mich'
@@ -94,6 +116,8 @@ export interface FileRouteTypes {
     | '/'
     | '/angebote'
     | '/haltung'
+    | '/kontakt'
+    | '/rechtliches'
     | '/selbstfindung'
     | '/tierkommunikation'
     | '/ueber-mich'
@@ -103,6 +127,8 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AngeboteRoute: typeof AngeboteRoute
   HaltungRoute: typeof HaltungRoute
+  KontaktRoute: typeof KontaktRoute
+  RechtlichesRoute: typeof RechtlichesRoute
   SelbstfindungRoute: typeof SelbstfindungRoute
   TierkommunikationRoute: typeof TierkommunikationRoute
   UeberMichRoute: typeof UeberMichRoute
@@ -129,6 +155,20 @@ declare module '@tanstack/react-router' {
       path: '/selbstfindung'
       fullPath: '/selbstfindung'
       preLoaderRoute: typeof SelbstfindungRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/rechtliches': {
+      id: '/rechtliches'
+      path: '/rechtliches'
+      fullPath: '/rechtliches'
+      preLoaderRoute: typeof RechtlichesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kontakt': {
+      id: '/kontakt'
+      path: '/kontakt'
+      fullPath: '/kontakt'
+      preLoaderRoute: typeof KontaktRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/haltung': {
@@ -159,6 +199,8 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AngeboteRoute: AngeboteRoute,
   HaltungRoute: HaltungRoute,
+  KontaktRoute: KontaktRoute,
+  RechtlichesRoute: RechtlichesRoute,
   SelbstfindungRoute: SelbstfindungRoute,
   TierkommunikationRoute: TierkommunikationRoute,
   UeberMichRoute: UeberMichRoute,
