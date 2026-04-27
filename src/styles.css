@@ -52,6 +52,7 @@
   --clay: oklch(0.86 0.06 85);           /* sanftes gold-cream */
   --earth: oklch(0.30 0.13 300);         /* tiefes mystisches lila */
   --dusk: oklch(0.78 0.04 305);          /* gedämpfter lavendel */
+  --heading: oklch(0.86 0.07 305);       /* helleres lila für Überschriften */
 
   --background: var(--earth);
   --foreground: var(--mist);
@@ -103,6 +104,7 @@
     font-family: var(--font-serif);
     font-weight: 300;
     letter-spacing: -0.01em;
+    color: var(--heading);
   }
   ::selection {
     background-color: color-mix(in oklab, var(--clay) 35%, transparent);
