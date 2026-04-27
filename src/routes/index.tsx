@@ -1,6 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import heroMeadow from "@/assets/hero-meadow.jpg";
-import moonLogo from "@/assets/moon-logo.png";
 import { SectionEyebrow } from "@/components/section-eyebrow";
 
 export const Route = createFileRoute("/")({
@@ -30,47 +29,30 @@ function HomePage() {
         <div className="pointer-events-none absolute -right-40 -top-40 size-[700px] rounded-full bg-clay/10 blur-[160px]" />
         <div className="pointer-events-none absolute -left-40 top-1/2 size-[500px] rounded-full bg-clay/5 blur-[140px]" />
 
-        <div className="relative mx-auto grid max-w-7xl gap-16 px-6 py-20 lg:grid-cols-12 lg:gap-20 lg:px-12 lg:py-28">
-          <div className="flex flex-col justify-center gap-8 lg:col-span-6">
-            <SectionEyebrow>Raum für Reflexion</SectionEyebrow>
-            <h1 className="text-balance font-serif text-5xl leading-[1.05] text-mist md:text-6xl lg:text-7xl">
-              Innere Balance{" "}
-              <span className="italic text-clay">finden</span>
-            </h1>
-            <p className="max-w-[44ch] text-pretty text-lg font-light leading-relaxed text-dusk">
-              Durch Selbsterkenntnis, Übernahme von Verantwortung und bewusst den lichten Weg
-              wählen. AstroBalance begleitet Menschen in Übergangs- und Entwicklungsphasen — mit
-              astrologischer Tiefe und achtsamer Struktur.
-            </p>
-            <div className="flex flex-wrap items-center gap-5 pt-2">
-              <Link
-                to="/angebote"
-                className="rounded-full bg-clay px-8 py-4 text-sm font-light text-earth transition-all duration-300 hover:bg-mist hover:shadow-lg hover:shadow-clay/20"
-              >
-                Angebote ansehen
-              </Link>
-              <Link
-                to="/ueber-mich"
-                className="text-sm font-light text-mist underline-offset-4 hover:text-clay hover:underline"
-              >
-                Mehr über meine Arbeit ↓
-              </Link>
-            </div>
-          </div>
-
-          <div className="relative flex items-center justify-center lg:col-span-6">
-            {/* Mond als zentrales Brand-Element */}
-            <div className="relative aspect-square w-full max-w-[520px]">
-              <div className="absolute inset-0 rounded-full bg-clay/10 blur-3xl" />
-              <img
-                src={moonLogo}
-                alt="AstroBalance Mond-Emblem"
-                width={1024}
-                height={1024}
-                className="relative size-full object-contain"
-                style={{ filter: "drop-shadow(0 20px 60px rgba(0,0,0,0.4))" }}
-              />
-            </div>
+        <div className="relative mx-auto flex max-w-5xl flex-col items-center gap-10 px-6 py-28 text-center lg:py-40">
+          <SectionEyebrow>Raum für Reflexion</SectionEyebrow>
+          <h1 className="text-balance font-serif text-6xl leading-[1.02] text-mist md:text-7xl lg:text-[7.5rem]">
+            Innere Balance{" "}
+            <span className="italic text-clay">finden</span>
+          </h1>
+          <p className="max-w-[52ch] text-pretty text-lg font-light leading-relaxed text-dusk md:text-xl">
+            Durch Selbsterkenntnis, Übernahme von Verantwortung und bewusst den lichten Weg
+            wählen. AstroBalance begleitet Menschen in Übergangs- und Entwicklungsphasen — mit
+            astrologischer Tiefe und achtsamer Struktur.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-5 pt-4">
+            <Link
+              to="/angebote"
+              className="rounded-full bg-clay px-9 py-4 text-sm font-light text-earth transition-all duration-300 hover:bg-mist hover:shadow-lg hover:shadow-clay/20"
+            >
+              Angebote ansehen
+            </Link>
+            <Link
+              to="/ueber-mich"
+              className="text-sm font-light text-mist underline-offset-4 hover:text-clay hover:underline"
+            >
+              Mehr über meine Arbeit ↓
+            </Link>
           </div>
         </div>
       </section>
