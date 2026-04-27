@@ -106,8 +106,8 @@
     letter-spacing: 0;
     color: var(--heading);
     display: inline-block;
-    padding: 0.9em 1.6em;
-    margin: -0.6em -0.8em;
+    padding: 1.4em 1.6em;
+    margin: -1.1em -0.8em;
     background-image:
       radial-gradient(
         circle at center,
