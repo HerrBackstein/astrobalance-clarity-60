@@ -106,17 +106,22 @@
     letter-spacing: 0;
     color: var(--heading);
     display: inline-block;
-    padding: 2.2em 1.6em;
-    margin: -1.9em -0.8em;
+    padding: 2.6em 2em;
+    margin: -2.3em -1.2em;
     background-image:
       radial-gradient(
-        circle at center,
-        oklch(0.46 0.18 300 / 0.40) 0%,
-        oklch(0.45 0.17 300 / 0.34) 18%,
-        oklch(0.43 0.16 300 / 0.24) 36%,
-        oklch(0.40 0.15 300 / 0.15) 54%,
-        oklch(0.38 0.13 300 / 0.08) 70%,
-        oklch(0.36 0.12 300 / 0.03) 85%,
+        ellipse 60% 55% at center,
+        oklch(0.48 0.18 300 / 0.38) 0%,
+        oklch(0.47 0.175 300 / 0.34) 10%,
+        oklch(0.46 0.17 300 / 0.30) 20%,
+        oklch(0.45 0.165 300 / 0.25) 30%,
+        oklch(0.43 0.155 300 / 0.20) 40%,
+        oklch(0.42 0.145 300 / 0.15) 50%,
+        oklch(0.40 0.135 300 / 0.11) 60%,
+        oklch(0.39 0.125 300 / 0.075) 70%,
+        oklch(0.37 0.115 300 / 0.045) 80%,
+        oklch(0.36 0.105 300 / 0.02) 90%,
+        oklch(0.35 0.10 300 / 0.005) 96%,
         oklch(0.35 0.10 300 / 0) 100%
       );
   }
