@@ -1,6 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import heroMeadow from "@/assets/hero-meadow.jpg";
 import { SectionEyebrow } from "@/components/section-eyebrow";
+import { useEffect, useState } from "react";
+import mirror1 from "@/assets/mirror-1.jpg";
+import mirror2 from "@/assets/mirror-2.jpg";
+import mirror3 from "@/assets/mirror-3.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -22,6 +25,19 @@ export const Route = createFileRoute("/")({
 });
 
 function HomePage() {
+  const mirrorImages = [
+    { src: mirror1, alt: "Astrologische Karten im Kerzenlicht" },
+    { src: mirror2, alt: "Ätherische Öle und Kristalle" },
+    { src: mirror3, alt: "Horoskop-Analyse mit Imperastro" },
+  ];
+  const [activeMirror, setActiveMirror] = useState(0);
+  useEffect(() => {
+    const id = setInterval(
+      () => setActiveMirror((i) => (i + 1) % mirrorImages.length),
+      5000,
+    );
+    return () => clearInterval(id);
+  }, [mirrorImages.length]);
   return (
     <>
       {/* HERO */}
@@ -115,16 +131,36 @@ function HomePage() {
       {/* ASTROLOGY AS MIRROR */}
       <section className="mx-auto max-w-7xl px-6 py-28 lg:px-12">
         <div className="grid items-center gap-16 lg:grid-cols-2">
-          <div className="relative aspect-[4/5] overflow-hidden rounded-[36px] panel p-2.5">
-            <div className="size-full overflow-hidden rounded-[26px]">
-              <img
-                src={heroMeadow}
-                alt="Stille Wiese im Morgenlicht"
-                width={1280}
-                height={960}
-                loading="lazy"
-                className="size-full object-cover opacity-80 mix-blend-luminosity"
-              />
+          <div className="flex flex-col gap-5">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-[36px] panel p-2.5">
+              <div className="relative size-full overflow-hidden rounded-[26px]">
+                {mirrorImages.map((img, i) => (
+                  <img
+                    key={img.src}
+                    src={img.src}
+                    alt={img.alt}
+                    width={1280}
+                    height={1600}
+                    loading="lazy"
+                    className={`absolute inset-0 size-full object-cover opacity-0 transition-opacity duration-[1400ms] ease-in-out ${
+                      i === activeMirror ? "opacity-85" : ""
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
+            <div className="flex items-center justify-center gap-2.5">
+              {mirrorImages.map((_, i) => (
+                <button
+                  key={i}
+                  type="button"
+                  onClick={() => setActiveMirror(i)}
+                  aria-label={`Bild ${i + 1} anzeigen`}
+                  className={`h-1.5 rounded-full transition-all duration-500 ${
+                    i === activeMirror ? "w-8 bg-clay" : "w-1.5 bg-clay/30 hover:bg-clay/60"
+                  }`}
+                />
+              ))}
             </div>
           </div>
           <div className="flex flex-col gap-7">
