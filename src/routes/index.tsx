@@ -137,8 +137,8 @@ function HomePage() {
       {/* ASTROLOGY AS MIRROR */}
       <section className="mx-auto max-w-7xl px-6 py-28 lg:px-12">
         <div className="grid items-center gap-16 lg:grid-cols-2">
-          <div className="flex flex-col gap-5">
-            <div className="relative aspect-[4/5] overflow-hidden rounded-[36px] panel p-2.5">
+          <div className="flex flex-col items-center gap-5">
+            <div className="relative aspect-[4/5] w-full max-w-md overflow-hidden rounded-[36px] panel p-2.5">
               <div className="relative size-full overflow-hidden rounded-[26px]">
                 {mirrorImages.map((img, i) => (
                   <img
