@@ -4,6 +4,9 @@ import { useEffect, useState } from "react";
 import mirror1 from "@/assets/mirror-1.jpg";
 import mirror2 from "@/assets/mirror-2.jpg";
 import mirror3 from "@/assets/mirror-3.jpg";
+import mirror4 from "@/assets/mirror-4.jpg";
+import mirror5 from "@/assets/mirror-5.jpg";
+import mirror6 from "@/assets/mirror-6.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -29,15 +32,18 @@ function HomePage() {
     { src: mirror1, alt: "Astrologische Karten im Kerzenlicht" },
     { src: mirror2, alt: "Ätherische Öle und Kristalle" },
     { src: mirror3, alt: "Horoskop-Analyse mit Imperastro" },
+    { src: mirror4, alt: "Achtsame Begleitung im Gespräch" },
+    { src: mirror5, alt: "Verbindung Mensch und Tier" },
+    { src: mirror6, alt: "Tierkommunikation in Achtsamkeit" },
   ];
   const [activeMirror, setActiveMirror] = useState(0);
   useEffect(() => {
     const id = setInterval(
-      () => setActiveMirror((i) => (i + 1) % mirrorImages.length),
-      5000,
+      () => setActiveMirror((i) => (i + 1) % 6),
+      4000,
     );
     return () => clearInterval(id);
-  }, [mirrorImages.length]);
+  }, []);
   return (
     <>
       {/* HERO */}
@@ -141,26 +147,21 @@ function HomePage() {
                     alt={img.alt}
                     width={1280}
                     height={1600}
-                    loading="lazy"
-                    className={`absolute inset-0 size-full object-cover opacity-0 transition-opacity duration-[1400ms] ease-in-out ${
-                      i === activeMirror ? "opacity-85" : ""
+                    loading={i === 0 ? "eager" : "lazy"}
+                    className={`absolute inset-0 size-full object-cover transition-opacity duration-[1400ms] ease-in-out ${
+                      i === activeMirror ? "opacity-90" : "opacity-0"
                     }`}
                   />
                 ))}
               </div>
             </div>
-            <div className="flex items-center justify-center gap-2.5">
-              {mirrorImages.map((_, i) => (
-                <button
-                  key={i}
-                  type="button"
-                  onClick={() => setActiveMirror(i)}
-                  aria-label={`Bild ${i + 1} anzeigen`}
-                  className={`h-1.5 rounded-full transition-all duration-500 ${
-                    i === activeMirror ? "w-8 bg-clay" : "w-1.5 bg-clay/30 hover:bg-clay/60"
-                  }`}
-                />
-              ))}
+            <div
+              aria-hidden="true"
+              className="flex items-center justify-center gap-2"
+            >
+              <span className="size-1.5 rounded-full bg-clay/70" />
+              <span className="size-1.5 rounded-full bg-clay/40" />
+              <span className="size-1.5 rounded-full bg-clay/20" />
             </div>
           </div>
           <div className="flex flex-col gap-7">
