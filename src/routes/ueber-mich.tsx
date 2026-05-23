@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SectionEyebrow } from "@/components/section-eyebrow";
-import victoria from "@/assets/mirror-4.jpg";
+import victoria from "@/assets/mirror-6.jpg";
 
 export const Route = createFileRoute("/ueber-mich")({
   head: () => ({
