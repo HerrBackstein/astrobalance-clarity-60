@@ -105,7 +105,7 @@ function HomePage() {
 
       {/* PILLARS */}
       <section className="border-y border-white/10 bg-black/15">
-        <div className="mx-auto grid max-w-7xl gap-12 px-6 py-24 md:grid-cols-3 lg:px-12">
+        <div className="mx-auto grid max-w-7xl gap-x-16 gap-y-14 px-6 py-24 md:grid-cols-3 md:divide-x md:divide-white/10 lg:px-12">
           {[
             {
               n: "I",
@@ -123,7 +123,7 @@ function HomePage() {
               body: "Ein ruhiger, gehaltener Raum in Zeiten des Abschieds — für Tiere.",
             },
           ].map((p) => (
-            <div key={p.n} className="flex flex-col gap-5">
+            <div key={p.n} className="flex flex-col gap-5 md:px-8 first:md:pl-0 last:md:pr-0">
               <span className="font-serif text-sm uppercase tracking-[0.25em] text-clay">
                 {p.n}
               </span>
@@ -135,7 +135,7 @@ function HomePage() {
       </section>
 
       {/* ASTROLOGY AS MIRROR */}
-      <section className="mx-auto max-w-7xl px-6 py-28 lg:px-12">
+      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-12 lg:py-20">
         <div className="grid items-center gap-16 lg:grid-cols-2">
           <div className="flex flex-col items-center gap-5">
             <div className="relative aspect-[4/5] w-full max-w-md overflow-hidden rounded-[36px] panel p-2.5">
@@ -174,11 +174,6 @@ function HomePage() {
                 Meine Arbeit dient der Selbstreflexion und Orientierung. Ich biete keine
                 Zukunftsprognosen, sondern begleite bewusste Entwicklungsprozesse.
               </p>
-              <p>
-                Ergänzend arbeite ich mit praktischen Werkzeugen wie Ritualen, Glaubenssatzarbeit
-                sowie dem achtsamen Einsatz ätherischer Öle und Räucherkräuter — um Erkenntnisse
-                nachhaltig im Alltag zu verankern.
-              </p>
             </div>
           </div>
         </div>
@@ -201,11 +196,6 @@ function HomePage() {
                 Für die astrologische Ausarbeitung verwende ich das professionelle Astroprogramm
                 Imperastro — entwickelt von Frank & Rainer, dort, wo langjährige Erfahrung auf
                 konzeptionelle Klarheit und durchdachte Struktur trifft.
-              </p>
-              <p>
-                Das Programm ermöglicht eine differenzierte Betrachtung komplexer Zusammenhänge und
-                unterstützt eine astrologische Analyse auf höchstem fachlichen Niveau. Die
-                Interpretation bleibt dabei stets individuell und verantwortungsvoll.
               </p>
               <p className="border-l-2 border-clay/60 pl-5 italic text-mist/85">
                 Technische Präzision und intuitive Wahrnehmung stehen in Balance. Die astrologische

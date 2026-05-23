@@ -51,7 +51,7 @@
   --sand: oklch(0.42 0.105 305);         /* mittleres lila */
   --clay: oklch(0.86 0.06 85);           /* sanftes gold-cream */
   --earth: oklch(0.30 0.13 300);         /* tiefes mystisches lila */
-  --dusk: oklch(0.78 0.04 305);          /* gedämpfter lavendel */
+  --dusk: oklch(0.78 0.012 290);         /* gedämpftes warmgrau */
   --heading: oklch(0.86 0.07 305);       /* helleres lila für Überschriften */
 
   --background: var(--earth);

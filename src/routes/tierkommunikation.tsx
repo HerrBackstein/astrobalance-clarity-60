@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SectionEyebrow } from "@/components/section-eyebrow";
-import animal from "@/assets/animal.jpg";
+import animal from "@/assets/mirror-4.jpg";
 
 export const Route = createFileRoute("/tierkommunikation")({
   head: () => ({
@@ -44,7 +44,7 @@ function Page() {
           </div>
           <div className="aspect-[4/5] overflow-hidden rounded-[36px] bg-white/5 p-2.5">
             <div className="size-full overflow-hidden rounded-[26px]">
-              <img src={animal} alt="Pferd im Morgennebel" width={1024} height={1280} className="size-full object-cover" />
+              <img src={animal} alt="Hund in achtsamer Begegnung" width={1024} height={1280} className="size-full object-cover" />
             </div>
           </div>
         </div>
