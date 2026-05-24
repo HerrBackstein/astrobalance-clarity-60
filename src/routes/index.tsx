@@ -7,6 +7,9 @@ import mirror3 from "@/assets/mirror-3.jpg";
 import mirror4 from "@/assets/mirror-4.jpg";
 import mirror5 from "@/assets/mirror-5.jpg";
 import mirror6 from "@/assets/mirror-6.jpg";
+import dog1 from "@/assets/dog-1.jpg";
+import dog2 from "@/assets/dog-2.jpg";
+import dog3 from "@/assets/dog-3.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -33,10 +36,23 @@ function HomePage() {
     { src: mirror3, alt: "Horoskop-Analyse mit Imperastro" },
     { src: mirror2, alt: "Ätherische Öle und Kristalle" },
   ];
+  const dogImages = [
+    { src: dog1, alt: "Hund schnuppert an der Hand" },
+    { src: dog2, alt: "Achtsamer Moment mit Hund" },
+    { src: dog3, alt: "Begleitung im Freien" },
+  ];
   const [activeMirror, setActiveMirror] = useState(0);
+  const [activeDog, setActiveDog] = useState(0);
   useEffect(() => {
     const id = setInterval(
       () => setActiveMirror((i) => (i + 1) % 3),
+      4000,
+    );
+    return () => clearInterval(id);
+  }, []);
+  useEffect(() => {
+    const id = setInterval(
+      () => setActiveDog((i) => (i + 1) % 3),
       4000,
     );
     return () => clearInterval(id);
