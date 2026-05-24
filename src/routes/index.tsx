@@ -92,10 +92,6 @@ function HomePage() {
               Horoskop als Spiegel Deiner aktuellen Themen zu verstehen und bewusste Schritte zu
               gehen.
             </p>
-            <p>
-              AstroBalance begleitet Dich dabei, Dich selbst besser zu verstehen, innere Balance zu
-              finden und stimmige Entscheidungen zu treffen — für Dich und für Dein Tier.
-            </p>
           </div>
         </div>
       </section>
