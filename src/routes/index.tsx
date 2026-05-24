@@ -30,16 +30,13 @@ export const Route = createFileRoute("/")({
 function HomePage() {
   const mirrorImages = [
     { src: mirror1, alt: "Astrologische Karten im Kerzenlicht" },
-    { src: mirror2, alt: "Ätherische Öle und Kristalle" },
     { src: mirror3, alt: "Horoskop-Analyse mit Imperastro" },
-    { src: mirror4, alt: "Achtsame Begleitung im Gespräch" },
-    { src: mirror5, alt: "Verbindung Mensch und Tier" },
-    { src: mirror6, alt: "Tierkommunikation in Achtsamkeit" },
+    { src: mirror2, alt: "Ätherische Öle und Kristalle" },
   ];
   const [activeMirror, setActiveMirror] = useState(0);
   useEffect(() => {
     const id = setInterval(
-      () => setActiveMirror((i) => (i + 1) % 6),
+      () => setActiveMirror((i) => (i + 1) % 3),
       4000,
     );
     return () => clearInterval(id);
