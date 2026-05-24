@@ -101,38 +101,27 @@ function HomePage() {
       </section>
 
       {/* PILLARS */}
-      <section className="border-y border-white/10 bg-black/15">
-        <div className="mx-auto grid max-w-7xl gap-x-16 gap-y-14 px-6 py-24 md:grid-cols-3 md:divide-x md:divide-white/10 lg:px-12">
-          {[
-            {
-              n: "I",
-              title: "Astrologische Tiefenbegleitung",
-              body: "90 Minuten — persönliche Standortbestimmung und Prozessbegleitung.",
-            },
-            {
-              n: "II",
-              title: "Schriftliche Tierkommunikation",
-              body: "Achtsame Wahrnehmung in Textform — zur Vertiefung der Mensch-Tier-Verbindung.",
-            },
-            {
-              n: "III",
-              title: "Energetische Sterbebegleitung",
-              body: "Ein ruhiger, gehaltener Raum in Zeiten des Abschieds — für Tiere.",
-            },
-          ].map((p) => (
-            <div key={p.n} className="flex flex-col gap-5 md:px-8 first:md:pl-0 last:md:pr-0">
-              <span className="font-serif text-sm uppercase tracking-[0.25em] text-clay">
-                {p.n}
+      {/* ASTROLOGY BLOCK */}
+      <section className="relative border-y border-white/10 bg-black/20">
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-clay/5 via-transparent to-transparent" />
+        <div className="relative mx-auto max-w-7xl px-6 py-24 lg:px-12 lg:py-28">
+          <div className="mb-14 flex items-end justify-between gap-8">
+            <div>
+              <span className="font-serif text-xs uppercase tracking-[0.35em] text-clay">
+                — Ein —
               </span>
-              <h3 className="font-serif text-2xl text-mist">{p.title}</h3>
-              <p className="max-w-[34ch] text-sm font-light leading-relaxed text-dusk">{p.body}</p>
+              <h2 className="mt-4 font-serif text-5xl leading-[1.05] text-mist md:text-6xl">
+                Astrologie<span className="italic text-clay">.</span>
+              </h2>
             </div>
-          ))}
-        </div>
-      </section>
+            <Link
+              to="/angebote"
+              className="hidden text-sm font-light text-dusk underline-offset-4 hover:text-clay hover:underline md:inline"
+            >
+              Zu den Angeboten →
+            </Link>
+          </div>
 
-      {/* ASTROLOGY AS MIRROR */}
-      <section className="mx-auto max-w-7xl px-6 py-16 lg:px-12 lg:py-20">
         <div className="grid items-center gap-16 lg:grid-cols-2">
           <div className="flex flex-col items-center gap-5">
             <div className="relative aspect-[4/5] w-full max-w-md overflow-hidden rounded-[36px] panel p-2.5">
@@ -162,42 +151,96 @@ function HomePage() {
             </div>
           </div>
           <div className="flex flex-col gap-7">
-            <SectionEyebrow>Astrologie als Spiegel — nicht als Vorhersage</SectionEyebrow>
-            <h2 className="font-serif text-4xl leading-tight text-mist md:text-5xl">
+            <SectionEyebrow>Spiegel — nicht Vorhersage</SectionEyebrow>
+            <h3 className="font-serif text-3xl leading-tight text-mist md:text-4xl">
               Selbstreflexion und <span className="italic text-clay">Orientierung.</span>
-            </h2>
+            </h3>
             <div className="space-y-5 text-base font-light leading-relaxed text-dusk">
               <p>
-                Meine Arbeit dient der Selbstreflexion und Orientierung. Ich biete keine
-                Zukunftsprognosen, sondern begleite bewusste Entwicklungsprozesse.
+                In 90 Minuten entsteht eine persönliche Standortbestimmung — Dein Horoskop als
+                Spiegel der aktuellen Themen, gelesen mit dem professionellen Astroprogramm
+                <span className="text-mist"> Imperastro</span> von Frank &amp; Rainer.
+              </p>
+              <p className="border-l-2 border-clay/60 pl-5 italic text-mist/80">
+                Technische Präzision und intuitive Wahrnehmung in Balance.
               </p>
             </div>
+            <Link
+              to="/selbstfindung"
+              className="mt-2 inline-flex w-fit rounded-full border border-clay/40 px-7 py-3 text-sm font-light text-mist transition hover:border-clay hover:bg-clay/10"
+            >
+              Astrologische Begleitung
+            </Link>
           </div>
+        </div>
         </div>
       </section>
 
-      {/* IMPERASTRO */}
-      <section className="border-y border-white/10 bg-black/20">
-        <div className="mx-auto max-w-7xl px-6 py-24 lg:px-12">
-          <div className="grid gap-12 lg:grid-cols-12">
-            <div className="lg:col-span-4">
-              <p className="text-[0.7rem] uppercase tracking-[0.25em] text-clay">
-                Präzision in der Analyse
-              </p>
-              <h2 className="mt-6 font-serif text-4xl leading-tight text-mist md:text-5xl">
-                Imperastro <span className="italic text-clay">— Tiefe & Klarheit.</span>
+      {/* DIVIDER */}
+      <div className="mx-auto flex max-w-7xl items-center gap-6 px-6 py-16 lg:px-12">
+        <span className="h-px flex-1 bg-white/10" />
+        <span className="font-serif text-xs uppercase tracking-[0.4em] text-dusk">
+          &amp; — und —
+        </span>
+        <span className="h-px flex-1 bg-white/10" />
+      </div>
+
+      {/* TIERKOMMUNIKATION BLOCK */}
+      <section className="relative overflow-hidden">
+        <div className="pointer-events-none absolute -left-32 top-1/3 size-[420px] rounded-full bg-clay/5 blur-[140px]" />
+        <div className="relative mx-auto max-w-7xl px-6 py-24 lg:px-12 lg:py-28">
+          <div className="mb-14 flex items-end justify-between gap-8">
+            <div className="text-right md:text-left">
+              <span className="font-serif text-xs uppercase tracking-[0.35em] text-clay">
+                — Zwei —
+              </span>
+              <h2 className="mt-4 font-serif text-5xl leading-[1.05] text-mist md:text-6xl">
+                Tierkommunikation<span className="italic text-clay">.</span>
               </h2>
             </div>
-            <div className="space-y-5 text-base font-light leading-relaxed text-dusk lg:col-span-7 lg:col-start-6">
-              <p>
-                Für die astrologische Ausarbeitung verwende ich das professionelle Astroprogramm
-                Imperastro — entwickelt von Frank & Rainer, dort, wo langjährige Erfahrung auf
-                konzeptionelle Klarheit und durchdachte Struktur trifft.
+          </div>
+
+          <div className="grid items-center gap-16 lg:grid-cols-2">
+            <div className="order-2 flex flex-col gap-7 lg:order-1">
+              <SectionEyebrow>Achtsam — in Schriftform</SectionEyebrow>
+              <h3 className="font-serif text-3xl leading-tight text-mist md:text-4xl">
+                Wirklich <span className="italic text-clay">zuhören.</span>
+              </h3>
+              <p className="text-base font-light leading-relaxed text-dusk">
+                Tiere kommunizieren auf feinen Ebenen. In Textform entsteht ein ruhiger Raum, in
+                dem ihre Signale Platz finden — zur Vertiefung der Mensch-Tier-Verbindung, in
+                Übergangsphasen und auf dem letzten Weg.
               </p>
-              <p className="border-l-2 border-clay/60 pl-5 italic text-mist/85">
-                Technische Präzision und intuitive Wahrnehmung stehen in Balance. Die astrologische
-                Analyse dient als Grundlage — die bewusste Integration geschieht im Gespräch.
-              </p>
+              <ul className="space-y-3 text-sm font-light text-dusk">
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 size-1 rounded-full bg-clay" />
+                  Schriftliche Tierkommunikation
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 size-1 rounded-full bg-clay" />
+                  Energetische Sterbebegleitung
+                </li>
+              </ul>
+              <Link
+                to="/tierkommunikation"
+                className="mt-2 inline-flex w-fit rounded-full border border-clay/40 px-7 py-3 text-sm font-light text-mist transition hover:border-clay hover:bg-clay/10"
+              >
+                Mehr erfahren
+              </Link>
+            </div>
+            <div className="order-1 lg:order-2">
+              <div className="relative aspect-[4/5] w-full max-w-md overflow-hidden rounded-[36px] panel p-2.5 lg:ml-auto">
+                <div className="relative size-full overflow-hidden rounded-[26px]">
+                  <img
+                    src={mirror6}
+                    alt="Achtsame Begegnung mit Hund"
+                    width={1280}
+                    height={1600}
+                    loading="lazy"
+                    className="size-full object-cover"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
