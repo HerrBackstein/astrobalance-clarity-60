@@ -7,6 +7,9 @@ import mirror3 from "@/assets/mirror-3.jpg";
 import mirror4 from "@/assets/mirror-4.jpg";
 import mirror5 from "@/assets/mirror-5.jpg";
 import mirror6 from "@/assets/mirror-6.jpg";
+import dog1 from "@/assets/dog-1.jpg";
+import dog2 from "@/assets/dog-2.jpg";
+import dog3 from "@/assets/dog-3.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -33,10 +36,23 @@ function HomePage() {
     { src: mirror3, alt: "Horoskop-Analyse mit Imperastro" },
     { src: mirror2, alt: "Ätherische Öle und Kristalle" },
   ];
+  const dogImages = [
+    { src: dog1, alt: "Hund schnuppert an der Hand" },
+    { src: dog2, alt: "Achtsamer Moment mit Hund" },
+    { src: dog3, alt: "Begleitung im Freien" },
+  ];
   const [activeMirror, setActiveMirror] = useState(0);
+  const [activeDog, setActiveDog] = useState(0);
   useEffect(() => {
     const id = setInterval(
       () => setActiveMirror((i) => (i + 1) % 3),
+      4000,
+    );
+    return () => clearInterval(id);
+  }, []);
+  useEffect(() => {
+    const id = setInterval(
+      () => setActiveDog((i) => (i + 1) % 3),
       4000,
     );
     return () => clearInterval(id);
@@ -120,7 +136,7 @@ function HomePage() {
 
         <div className="grid items-center gap-16 lg:grid-cols-2">
           <div className="flex flex-col items-center gap-5">
-            <div className="relative aspect-[4/5] w-full max-w-md overflow-hidden rounded-[36px] panel p-2.5">
+            <div className="relative aspect-[4/5] w-full max-w-sm overflow-hidden rounded-[36px] panel p-2.5">
               <div className="relative size-full overflow-hidden rounded-[26px]">
                 {mirrorImages.map((img, i) => (
                   <img
@@ -224,18 +240,31 @@ function HomePage() {
                 Mehr erfahren
               </Link>
             </div>
-            <div className="order-1 lg:order-2">
-              <div className="relative aspect-[4/5] w-full max-w-md overflow-hidden rounded-[36px] panel p-2.5 lg:ml-auto">
+            <div className="order-1 flex flex-col items-center gap-5 lg:order-2 lg:items-end">
+              <div className="relative aspect-[4/5] w-full max-w-sm overflow-hidden rounded-[36px] panel p-2.5">
                 <div className="relative size-full overflow-hidden rounded-[26px]">
-                  <img
-                    src={mirror6}
-                    alt="Achtsame Begegnung mit Hund"
-                    width={1280}
-                    height={1600}
-                    loading="lazy"
-                    className="size-full object-cover"
-                  />
+                  {dogImages.map((img, i) => (
+                    <img
+                      key={img.src}
+                      src={img.src}
+                      alt={img.alt}
+                      width={1280}
+                      height={1600}
+                      loading="lazy"
+                      className={`absolute inset-0 size-full object-cover transition-opacity duration-[1400ms] ease-in-out ${
+                        i === activeDog ? "opacity-90" : "opacity-0"
+                      }`}
+                    />
+                  ))}
                 </div>
+              </div>
+              <div
+                aria-hidden="true"
+                className="flex items-center justify-center gap-2"
+              >
+                <span className="size-1.5 rounded-full bg-clay/70" />
+                <span className="size-1.5 rounded-full bg-clay/40" />
+                <span className="size-1.5 rounded-full bg-clay/20" />
               </div>
             </div>
           </div>
