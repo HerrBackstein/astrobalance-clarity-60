@@ -136,7 +136,7 @@ function HomePage() {
 
         <div className="grid items-center gap-16 lg:grid-cols-2">
           <div className="flex flex-col items-center gap-5">
-            <div className="relative aspect-[4/5] w-full max-w-sm overflow-hidden rounded-[36px] panel p-2.5">
+            <div className="relative aspect-[4/5] w-full max-w-md overflow-hidden rounded-[36px] panel p-2.5">
               <div className="relative size-full overflow-hidden rounded-[26px]">
                 {mirrorImages.map((img, i) => (
                   <img
@@ -241,7 +241,7 @@ function HomePage() {
               </Link>
             </div>
             <div className="order-1 flex flex-col items-center gap-5 lg:order-2 lg:items-end">
-              <div className="relative aspect-[4/5] w-full max-w-sm overflow-hidden rounded-[36px] panel p-2.5">
+              <div className="relative aspect-[4/5] w-full max-w-md overflow-hidden rounded-[36px] panel p-2.5">
                 <div className="relative size-full overflow-hidden rounded-[26px]">
                   {dogImages.map((img, i) => (
                     <img
