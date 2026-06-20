@@ -39,7 +39,7 @@ function Page() {
       <section className="mx-auto max-w-7xl px-6 py-24 lg:px-12">
         <div className="grid gap-16 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <div className="aspect-[4/5] overflow-hidden rounded-[36px] bg-white/5 p-2.5">
+            <div className="aspect-[4/5] max-w-sm overflow-hidden rounded-[36px] bg-white/5 p-2.5">
               <div className="size-full overflow-hidden rounded-[26px]">
                 <img src={celestial} alt="" loading="lazy" width={1024} height={1280} className="size-full object-cover" />
               </div>
