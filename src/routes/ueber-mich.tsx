@@ -41,7 +41,7 @@ function Page() {
             </p>
           </div>
           <div className="lg:col-span-5 lg:col-start-8">
-            <div className="aspect-[4/5] overflow-hidden rounded-[36px] bg-white/5 p-2.5">
+            <div className="aspect-[4/5] max-w-sm overflow-hidden rounded-[36px] bg-white/5 p-2.5">
               <div className="size-full overflow-hidden rounded-[26px]">
                 <img src={victoria} alt="Victoria Storer" width={1024} height={1280} className="size-full object-cover" />
               </div>

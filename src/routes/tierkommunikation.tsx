@@ -42,7 +42,7 @@ function Page() {
               sein.
             </p>
           </div>
-          <div className="aspect-[4/5] overflow-hidden rounded-[36px] bg-white/5 p-2.5">
+          <div className="aspect-[4/5] w-full max-w-sm overflow-hidden rounded-[36px] bg-white/5 p-2.5 mx-auto lg:mx-0">
             <div className="size-full overflow-hidden rounded-[26px]">
               <img src={animal} alt="Hund in achtsamer Begegnung" width={1024} height={1280} className="size-full object-cover" />
             </div>
