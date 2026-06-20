@@ -68,8 +68,7 @@ function Page() {
           onSubmit={(e) => {
             e.preventDefault();
             const data = new FormData(e.currentTarget);
-            const message =
-              `Name: ${data.get("name")}\nE-Mail: ${data.get("email")}\n\n${data.get("message")}`,
+            const message = `Name: ${data.get("name")}\nE-Mail: ${data.get("email")}\n\n${data.get("message")}`;
             navigator.clipboard.writeText(`An: ${emailAddress}\nBetreff: Anfrage über AstroBalance\n\n${message}`);
             setEmailCopied(true);
           }}
@@ -102,8 +101,7 @@ function Page() {
             Anfrage senden
           </button>
           <p className="text-xs text-dusk">
-            Mit dem Absenden öffnest Du Dein E-Mail-Programm. Deine Daten werden ausschließlich zur
-            Bearbeitung Deiner Anfrage verwendet.
+            Mit dem Absenden wird Deine Anfrage kopiert. Deine Daten werden ausschließlich zur Bearbeitung Deiner Anfrage verwendet.
           </p>
         </form>
       </div>
