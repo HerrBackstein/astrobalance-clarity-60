@@ -32,9 +32,9 @@ function Page() {
           </p>
 
           <div className="mt-12 space-y-5 text-base font-light text-mist">
-            <a href="mailto:astrobalance@gmail.com" className="flex items-start gap-4 hover:text-clay">
-              <Mail className="mt-0.5 size-5 text-clay" />
-              <span>astrobalance@gmail.com</span>
+            <a href="mailto:astrobalance@gmail.com" className="group flex items-start gap-4 transition-colors duration-300 hover:text-clay">
+              <Mail className="mt-0.5 size-5 text-clay transition-transform duration-300 group-hover:scale-110" />
+              <span className="underline underline-offset-4 decoration-clay/40 group-hover:decoration-clay">astrobalance@gmail.com</span>
             </a>
             <a href="tel:+436644541213" className="flex items-start gap-4 hover:text-clay">
               <Phone className="mt-0.5 size-5 text-clay" />
