@@ -18,6 +18,9 @@ export const Route = createFileRoute("/kontakt")({
 });
 
 function Page() {
+  const emailAddress = "astrobalance@gmail.com";
+  const emailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(emailAddress)}`;
+
   return (
     <section className="mx-auto max-w-7xl px-6 py-24 lg:px-12 lg:py-32">
       <div className="grid gap-16 lg:grid-cols-12">
@@ -32,9 +35,9 @@ function Page() {
           </p>
 
           <div className="mt-12 space-y-5 text-base font-light text-mist">
-            <a href="mailto:astrobalance@gmail.com" className="group flex items-start gap-4 transition-colors duration-300 hover:text-clay">
+            <a href={emailLink} target="_blank" rel="noopener noreferrer" className="group flex items-start gap-4 transition-colors duration-300 hover:text-clay">
               <Mail className="mt-0.5 size-5 text-clay transition-transform duration-300 group-hover:scale-110" />
-              <span className="underline underline-offset-4 decoration-clay/40 group-hover:decoration-clay">astrobalance@gmail.com</span>
+              <span className="underline underline-offset-4 decoration-clay/40 group-hover:decoration-clay">{emailAddress}</span>
             </a>
             <a href="tel:+436644541213" className="flex items-start gap-4 hover:text-clay">
               <Phone className="mt-0.5 size-5 text-clay" />
@@ -59,7 +62,7 @@ function Page() {
             const body = encodeURIComponent(
               `Name: ${data.get("name")}\nE-Mail: ${data.get("email")}\n\n${data.get("message")}`,
             );
-            window.location.href = `mailto:astrobalance@gmail.com?subject=${subject}&body=${body}`;
+            window.open(`${emailLink}&su=${subject}&body=${body}`, "_blank", "noopener,noreferrer");
           }}
         >
           <div className="flex flex-col gap-2">
