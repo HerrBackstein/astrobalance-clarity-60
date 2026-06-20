@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { createFileRoute } from "@tanstack/react-router";
 import { SectionEyebrow } from "@/components/section-eyebrow";
 import { Mail, Phone, MapPin } from "lucide-react";
@@ -19,7 +20,13 @@ export const Route = createFileRoute("/kontakt")({
 
 function Page() {
   const emailAddress = "astrobalance@gmail.com";
-  const emailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(emailAddress)}`;
+  const [emailCopied, setEmailCopied] = useState(false);
+
+  const copyEmailAddress = async () => {
+    await navigator.clipboard.writeText(emailAddress);
+    setEmailCopied(true);
+    window.setTimeout(() => setEmailCopied(false), 2200);
+  };
 
   return (
     <section className="mx-auto max-w-7xl px-6 py-24 lg:px-12 lg:py-32">
@@ -35,10 +42,13 @@ function Page() {
           </p>
 
           <div className="mt-12 space-y-5 text-base font-light text-mist">
-            <a href={emailLink} target="_blank" rel="noopener noreferrer" className="group flex items-start gap-4 transition-colors duration-300 hover:text-clay">
+            <button type="button" onClick={copyEmailAddress} className="group flex items-start gap-4 text-left transition-colors duration-300 hover:text-clay">
               <Mail className="mt-0.5 size-5 text-clay transition-transform duration-300 group-hover:scale-110" />
-              <span className="underline underline-offset-4 decoration-clay/40 group-hover:decoration-clay">{emailAddress}</span>
-            </a>
+              <span>
+                <span className="underline underline-offset-4 decoration-clay/40 group-hover:decoration-clay">{emailAddress}</span>
+                {emailCopied && <span className="ml-3 text-sm text-clay">kopiert</span>}
+              </span>
+            </button>
             <a href="tel:+436644541213" className="flex items-start gap-4 hover:text-clay">
               <Phone className="mt-0.5 size-5 text-clay" />
               <span>0664 4541213</span>
@@ -58,11 +68,9 @@ function Page() {
           onSubmit={(e) => {
             e.preventDefault();
             const data = new FormData(e.currentTarget);
-            const subject = encodeURIComponent("Anfrage über AstroBalance");
-            const body = encodeURIComponent(
-              `Name: ${data.get("name")}\nE-Mail: ${data.get("email")}\n\n${data.get("message")}`,
-            );
-            window.open(`${emailLink}&su=${subject}&body=${body}`, "_blank", "noopener,noreferrer");
+            const message = `Name: ${data.get("name")}\nE-Mail: ${data.get("email")}\n\n${data.get("message")}`;
+            navigator.clipboard.writeText(`An: ${emailAddress}\nBetreff: Anfrage über AstroBalance\n\n${message}`);
+            setEmailCopied(true);
           }}
         >
           <div className="flex flex-col gap-2">
@@ -93,8 +101,7 @@ function Page() {
             Anfrage senden
           </button>
           <p className="text-xs text-dusk">
-            Mit dem Absenden öffnest Du Dein E-Mail-Programm. Deine Daten werden ausschließlich zur
-            Bearbeitung Deiner Anfrage verwendet.
+            Mit dem Absenden wird Deine Anfrage kopiert. Deine Daten werden ausschließlich zur Bearbeitung Deiner Anfrage verwendet.
           </p>
         </form>
       </div>
